@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+  <!-- jQuery library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+  <!-- Latest compiled JavaScript for bootstrap 3-->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+  <!-- File specicifed styling start-->
+  <link rel="stylesheet" href="../css/pages/login.css">
+  <!-- File specicifed styling end-->
+
+  <!-- Componenets Styling start -->
+  <link rel="stylesheet" href="../css/components/sitemap.css">
+  <link rel="stylesheet" href="../css/components/navbar.css">
+  <link rel="stylesheet" href="../css/components/adminNavbar.css">
+  <link rel="stylesheet" href="../css/components/header.css">
+  <!-- Componenets Styling end -->
+
+  <!-- General Styling start-->
+  <link rel="stylesheet" href="../css/general/main.css">
+  <link rel="stylesheet" href="../css/general/myFramework.css">
+  <!-- General Styling end-->
+
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css">  <!-- Font Awesome 5 -->
+  
+  <!-- Latest compiled and minified CSS for bootstrap 3-->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+  <!-- side nav js -->
+  <script src="../../js/sideNav.js"></script>
+  <title> Cart </title>
+  <!-- Logo of website -->
+  <link rel='icon' href='../images/logo.svg' />
+
+  <title>Log In</title>
+
+</head>
+
+<body>
+
+<!-- Header Start -->
+
+<%- include('../include/header'); %>
+
+<!-- Header End -->
+
+  <!--Users Navbar Start-->
+  <%- include('../include/navbar'); %>
+  <!-- Navbar End-->
+
+  <!--Admin Navbar Start-->
+  <%- include('../include/adminNavbar'); %>
+  <!--Admin Navbar End-->
+
+
+  <!-- Path start -->
+
+  <div class="container whiteBlock path">
+    <a class="displayInlineBlock pathLink"> Log In </a>
+  </div>
+
+  <!-- Path end -->
+  
+  <div class="container loginDiv">
+    <form action="http://localhost:3050/auth/login" method="POST">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Login</h4>
+        </div>
+        <div class="modal-body">
+          <div class="center"><label style="color: #930000; " ><%= errorMessage%></label></div>
+          
+          <div class="form-group">
+            <label >Email:</label><input value="<%=oldInput.email%>" name="email" type="text" class="form-control" id="email">
+          </div>
+          <div class="form-group">
+            <label >password:</label><input value="<%=oldInput.password%>" type="password" name="password" class="form-control" id="password">
+          </div>      
+        </div>
+        <div class="modal-footer">
+          <button type="submit" class="btn loginBtn col-xs-12">Login</button>
+          <label class="col-xs-12 center" >
+            <span id="askForRegister">Do not have an account ?</span>
+              <a id="registerBtn" href="http://localhost:3050/auth/register"> Register </a>
+          </label>
+        </div>
+      </div>
+    </form> 
+  </div>
+
+      <!-- Footer Start -->
+        
+      <%- include('../include/footer'); %>
+      
+      <!-- Footer End -->
+</body>
+
+</html>

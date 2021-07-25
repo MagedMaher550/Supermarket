@@ -1,0 +1,85 @@
+.orderItem {
+    margin-top: 10px;
+    margin-bottom: 40px;
+    height: 100%;
+}
+
+.orderProgress {
+    width: 70%;
+    transform: translateX(15%);
+    margin-top: 10px;
+    margin-bottom: 10px;
+    height: 25px;
+    background-color: #F6F6F6;
+    position: relative;
+}
+
+.allCircles {
+    background-color: #EBEBEB;
+    color: #B4B4B4;
+    width: 40px;
+    height: 40px;
+    font-size: 21px;
+    font-weight: 700;
+    line-height: 40px;
+    border-radius: 50% ;
+    transform: translateY(-25%);
+    /* text-shadow: 0 0 10px rgb(207, 207, 219); */
+}
+
+.readyCircle {
+    position: absolute;
+    left: 26%;
+}
+
+.shippedCircle {
+    position: absolute;
+    left: 52%;
+}
+
+.arrivedCircle {
+    position: absolute;
+    left: 78%;
+}
+
+.circleActive {
+    background-color: #4CDE82 !important;
+    color: white !important;
+}
+
+.orderProgressText {
+    font-size: 16px;
+    position: absolute;
+    top: 40px;
+    transform: translateX(-20%);
+    color: #CFCFCF;
+}
+
+.orderProgressActive {
+    color: black !important;
+}
+
+.orderProducts {
+    margin-top: 55px;
+}
+
+.customImg {
+    width: 100px;
+    height: 100px;
+}
+
+.orderProduct {
+    margin-bottom: 20px;
+}
+
+@media (max-width: 768px) {
+    .orderProgress {
+        width: 100%;
+        transform: translateX(0%);
+    }
+}
+
+
+.filtersContainer {
+    margin-top: 30px;
+}

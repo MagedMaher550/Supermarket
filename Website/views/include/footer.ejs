@@ -1,0 +1,199 @@
+
+    <div class="footerRowIcons">
+        <div class="container">
+          <div class="col-lg-3 col-sm-6">
+            <div class="displayInlineBlock">
+              <i class="fas fa-gift"></i>
+            </div>
+            <div class="displayInlineBlock">
+              <div class="row displayInlineBlock">
+                <strong>
+                  <p class="footerRowIconsText toRight alignLeft"> Speial Gift Cards</p>
+                </strong>
+                <p class="toLightGrey toRight alignLeft"> Give A Perfect Gift</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-sm-6">
+            <div class="displayInlineBlock">
+              <i class="fas fa-money-check-alt"></i>
+            </div>
+            <div class="displayInlineBlock">
+              <div class="row displayInlineBlock">
+                <strong>
+                  <p class="footerRowIconsText toRight alignLeft"> Secure Payment</p>
+                </strong>
+                <p class="toLightGrey toRight alignLeft"> 100% Secure Payment</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-sm-6">
+            <div class="displayInlineBlock">
+              <i class="fas fa-headset"></i>
+            </div>
+            <div class="displayInlineBlock">
+              <div class="row displayInlineBlock">
+                <strong>
+                  <p class="footerRowIconsText toRight alignLeft"> 24/7 Support</p>
+                </strong>
+                <p class="toLightGrey toRight alignLeft"> Online Support 24/7</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-sm-6">
+            <div class="displayInlineBlock">
+              <i class="fas fa-shipping-fast"></i>
+            </div>
+            <div class="displayInlineBlock">
+              <div class="row displayInlineBlock">
+                <strong>
+                  <p class="footerRowIconsText toRight alignLeft"> Free Shipping</p>
+                </strong>
+                <p class="toLightGrey toRight alignLeft"> On Order Over $101</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+      <div class="footerMiddle">
+        <div class="container">
+    
+          <div class="col-lg-3 col-sm-6 col-xs-12 pushDown">
+            <div class="row">
+              <p class="footerMiddleTextheader">
+                <strong>
+                  Contact Us
+                </strong>
+              </p>
+            </div>
+    
+            <div class="row">
+              <p class="footerMiddleMainInfo">
+                <i class="fas fa-map-marker-alt"></i>
+                &nbsp;
+                Elshatby Faculty of science,Alexandria
+              </p>
+            </div>
+    
+            <div class="row">
+              <p class="footerMiddleMainInfo">
+                <i class="fas fa-envelope"></i>
+                &nbsp;
+                company@gmail.com
+              </p>
+            </div>
+    
+            <div class="row">
+              <p class="footerMiddleMainInfo">
+                <i class="fas fa-phone-alt"></i>
+                &nbsp;
+                (+20) 123456789
+              </p>
+            </div>
+    
+            <div class="row">
+            </div>
+          </div>
+    
+    
+          <div class="col-lg-3 col-sm-6 col-xs-12 pushDown">
+            <div class="row">
+              <p class="footerMiddleTextheader">
+                <strong>
+                    My Account               
+                </strong>
+              </p>
+            </div>
+    
+            <div class="row">
+              
+              <p class="">
+                <% if(authentication) { %>
+                <a href="http://localhost:3050/shop/myAccount" class="footerMiddleSubInfo">
+                  My Account
+                </a>
+                <% }else{ %>
+                  <a href="http://localhost:3050/auth/login" class="footerMiddleSubInfo">
+                    login or signup
+                  </a>
+                <% } %>
+              </p>
+            </div>
+    
+            <div class="row">
+              <p class="">
+                <% if(authentication) { %>
+                <a href="http://localhost:3050/shop/cart" class="footerMiddleSubInfo">
+                  cart
+                </a>
+                <% }%>
+              </p>
+            </div>
+    
+
+            <div class="row">
+              <p class="">
+                <a href="http://localhost:3050/shop/faqs" class="footerMiddleSubInfo">
+                  FAQs
+                </a>
+              </p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-3 col-xs-12 center pushDown">
+              <div class="socialIcon">
+                <i class="fab fa-facebook-f positionCenter"></i>
+              </div>
+              <div class="socialIcon">
+                <i class="fab fa-instagram positionCenter"></i>
+              </div>
+              <div class="socialIcon">
+                <i class="fab fa-pinterest-p positionCenter"></i>
+              </div>
+              <div class="socialIcon">
+                <i class="fab fa-google-plus-g positionCenter"></i>
+              </div>
+              <div class="socialIcon">
+                <i class="fas fa-wifi positionCenter"></i>
+              </div>
+            </div>
+    
+            <div class="col-lg-5 appDownload col-xs-12 pushDown">
+              <div class="displayInlineBlock goLeftApp">
+                <div class="downloadAppText">
+                  <p>Download it from Goolge Play</p>
+                </div>
+                <div class="downloadAppLogo">
+                  <i class="fab fa-google-play positionCenter"></i>
+                </div>
+              </div>
+              <div class="displayInlineBlock goLeftApp">
+                <div class="downloadAppText">
+                  <p>Download it from App Store</p>
+                </div>
+                <div class="downloadAppLogo">
+                  <i class="fab fa-apple positionCenter"></i>
+                </div>
+              </div>
+              <div class="displayInlineBlock goLeftApp">
+                <div class="downloadAppText">
+                  <p>Download it from Microsoft Store</p>
+                </div>
+                <div class="downloadAppLogo">
+                  <i class="fab fa-windows positionCenter"></i>
+                </div>
+              </div>
+            </div>
+    
+            <div class="col-lg-4 col-xs-12 center">
+              <img src="../images/payment.png" alt="payment">
+            </div>
+          </div>
+          <div class="row">
+            <div class="bottomFooter center">
+              Powered By Graduation Project &copy; 2020
+            </div>
+          </div>
+        </div>
+      </div>

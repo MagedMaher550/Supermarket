@@ -1,0 +1,137 @@
+/* Site map start */
+
+.footerRowIcons {
+    background-color: #3D3D3D;
+    height: 100%;
+    width: 100%;
+  }
+  
+  .footerRowIcons i {
+    color: #767676;
+    font-size: 35px;
+    line-height: 100px;
+    transition: 1s;
+  }
+  
+  .footerRowIcons i:hover {
+    transform: rotateY(180deg);
+  }
+  
+  .positionIt {
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-60%, -40%);
+  }
+  
+  .footerRowIconsText {
+    color: #b0b0b0;
+    font-size: 16px;
+    display: inline-block;
+    margin-bottom: -5px !important;
+  }
+  
+  .footerMiddle {
+    background-color: rgb(37, 37, 37);
+    height: 100%;
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+  
+  .footerMiddleTextheader {
+    color: white;
+    font-family: Poppins, Helvetica, sans-serif;
+    font-size: 20px;
+  }
+  
+  .footerMiddleMainInfo {
+    color: #656565;
+    line-height: 25px;
+    width: 200px;
+  }
+  
+  .footerMiddleSubInfo {
+    color: #999;
+    text-decoration: none;
+    cursor: pointer;
+    transition: 0.8s;
+    width: 200px;
+  }
+  
+  .footerMiddleSubInfo:hover {
+    transform: translateX(4%);
+    color: white;
+    text-decoration: none;
+  }
+  
+  .footerMiddleSubInfo:hover::before {
+    font-family: 'Font Awesome 5 Free';
+    text-decoration: none;
+    font-weight: 900;
+    font-size: 5px;
+    padding-right: 1px;
+    color: red;
+    content: "\f111";
+  }
+  
+  .socialIcon {
+    width: 35px;
+    height: 35px;
+    padding: 5px;
+    margin-left: 2px;
+    margin-right: 2px;
+    border-radius: 50%;
+    background-color: #3D3D3D;
+    display: inline-block;
+    position: relative
+  }
+  
+  .socialIcon i {
+    color: #858585;
+  }
+  
+  .appDownload {
+    margin: 0 auto;
+  }
+  
+  .downloadAppText {
+    width: 70px;
+    height: 30px;
+    border: 1px solid #4B4A4A;
+    display: inline-block;
+  }
+  
+  .downloadAppLogo {
+    width: 30px;
+    height: 30px;
+    border: 1px solid #4B4A4A;
+    float: left;
+    position: relative;
+  }
+  
+  .downloadAppLogo i {
+    color: white;
+  }
+  
+  .downloadAppText p {
+    font-size: 7px;
+    padding: 2px 6px 2px 6px;
+    text-align: left;
+    color: #A5A5A5;
+  }
+  
+  .bottomFooter {
+    color: #575757;
+    font-size: 17px;
+    margin-right: 100px;
+  }
+  
+  @media (max-width: 1200px) {
+    .bottomFooter {
+      margin-top: 50px;
+      margin-right: -10px;
+    }
+  }
+  
+  /* Site map end */

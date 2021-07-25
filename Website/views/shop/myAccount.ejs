@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  
+
+  <!-- jQuery library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+  <!-- Latest compiled JavaScript for bootstrap 3-->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+  <!-- File specicifed styling start-->
+  <link rel="stylesheet" href="../css/pages/myAccount.css">
+  <!-- File specicifed styling end-->
+
+  <!-- Componenets Styling start -->
+  <link rel="stylesheet" href="../css/components/sitemap.css">
+  <link rel="stylesheet" href="../css/components/navbar.css">
+  <link rel="stylesheet" href="../css/components/adminNavbar.css">
+  <link rel="stylesheet" href="../css/components/header.css">
+  <!-- Componenets Styling end -->
+
+  <!-- General Styling start-->
+  <link rel="stylesheet" href="../css/general/main.css">
+  <link rel="stylesheet" href="../css/general/myFramework.css">
+  <!-- General Styling end-->
+
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css">  <!-- Font Awesome 5 -->
+  
+  <!-- Latest compiled and minified CSS for bootstrap 3-->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+  <!-- side nav js -->
+  <script src="../../js/sideNav.js"></script>
+
+  <title> My Account</title>
+
+</head>
+
+<body>
+  <!--First Headear Start-->
+  <%- include('../include/header'); %>
+  <!--End First Headear-->
+
+  <!--Users Navbar Start-->
+  <%- include('../include/navbar'); %>
+  <!-- Navbar End-->
+
+  <!--Admin Navbar Start-->
+  <%- include('../include/adminNavbar'); %>
+  <!--Admin Navbar End-->
+
+  <div class="container midSection">
+    <!-- Side Section Start -->
+    <div class="col-xs-12 col-md-3">
+      <div class="sidenavBrand">
+        <a href="#myInfo"> My Information </a>
+        <a href="#myPoints"> My Points </a>
+        <a href="http://localhost:3050/shop/userOrders"> My Orders </a>
+
+        <a href="#updateAddress"> update Address </a>
+        <a href="http://localhost:3050/auth/logout"> Logout </a>
+      </div>
+    </div>
+    <!-- Side Section End -->
+    <!-- Brands Section Strat -->
+  
+      <div class="col-xs-12 col-md-9">
+        <div class="row leftSectionElement">
+          <div id="greenSqaure"></div>
+          <h3 id="brandsHeaderText"> My Account</h3>
+        </div>
+
+        <div class="row leftSectionElement">
+            <div class="brandBox">
+              <div class="letterBox">
+                <a name="myInfo"></a> 
+               <h4>My Information</h4> 
+              </div>
+               <p class="brandName">Name :</p> 
+               <p class="brandName"><%=username%></p> <br>
+               <p class="brandName">Email :</p> 
+               <p class="brandName"><%=email%></p> <br>
+               <p class="brandName">Address :</p> 
+               <p class="brandName"><%=address%></p> <br>
+            </div>
+          </div>
+  
+        <div class="row leftSectionElement">
+          <div class="brandBox">
+            <div class="letterBox">
+              <a name="myPoints"></a>
+              <h4>My Points</h4>
+            </div>
+            <p class="brandName">Points :</p> 
+             <p class="brandName">
+              <%=points%>
+             </p> 
+          </div>
+        </div>
+
+        <div class="row leftSectionElement">
+          <div class="brandBox">
+            <div class="letterBox">
+              <a name="updateAddress"></a>
+             <h4> update address:</h4>
+            </div>
+            <form action="http://localhost:3050/auth/updateUserAddress" method="POST">
+              <div class="form-group">
+                <input hidden value="<%=userId%>" name="id">
+              <label >new address:</label><input type="text" class="form-control" name="address"  required>
+            </div>
+            <div class="form-group ">
+              <input type="submit" style="background-color: #000068;color: white;" class="form-control myAccountBtn" value="update" >
+            </div>
+          </form>  
+          </div>
+        </div>
+      </div>
+    
+    <!-- Brands Section End -->
+  </div>
+
+    <!--footer Start-->
+    <%- include('../include/footer'); %>
+    <!-- footer end-->
+    <script>
+      $(function() {
+        $('a[href*="#"]:not([href="#"])').click(function() {
+          if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+            var target = $(this.hash);
+            target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+            if (target.length) {
+              $('html, body').animate({
+                scrollTop: target.offset().top
+              }, 500);
+              return false;
+            }
+          }
+        });
+      });
+  </script>
+</body>
+</html>

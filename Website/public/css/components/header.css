@@ -1,0 +1,142 @@
+.sameLine{
+    display: flex;
+    display:inline-flex;
+}
+.cartAhref{
+  color: #000068 !important;
+  text-decoration: none !important;
+  outline: none !important;
+}
+.mainContainer{
+  width: 100%;
+    padding-top: 8px;
+    display: flex;
+    align-items :center;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+.startLeft{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.topBlueDiv{
+    background-color:#000068 ;
+    width: 100%;
+}
+
+.logo{
+  width: 100%;
+}
+
+.searchTextfield{
+    width: 85%;
+    padding: 9px;
+    border-radius: 3px;
+    border: 1px solid rgb(207, 207, 207);
+    background-color:  rgba(207, 207, 207, 0.116);
+}
+/* #930000 */
+.searchButton{
+    padding: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-left: -5px;
+    border-radius: 1px;
+    background-color: #000068;
+    color: white;
+    border: none;
+}
+
+.blue{
+    font-weight: bold;
+    color: #000068 ;
+}
+
+/* sidenav  start*/
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #00003b;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+  }
+  
+  .sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #ffffff;
+    display: block;
+    transition: 0.3s;
+  }
+  
+  
+  .sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+    cursor: pointer;
+  }
+  
+  #main {
+    transition: margin-left .5s;
+    padding: 16px;
+  }
+  
+  @media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+  }
+
+  
+/* sidenav  start*/
+
+.dropdownDivider {
+    margin: 0px;
+    padding: 0px;
+  }
+
+  .modal-header{
+    background-color: #000068;
+    color: white;
+  }
+
+  .modelButton{
+    background-color: #000068;
+    color: white;
+  }
+
+
+  .loginSignUp {
+    cursor: pointer
+  }
+
+  .explainPoints {
+    display: block;
+    font-size: 15px;
+    margin-top: 20px;
+  }
+
+  .paddingZero  {
+    padding: 0px !important;
+  }
+
+  .img-wishlist {
+    /* width: 45px;
+    height: 20px; */
+    padding-right: 5px;
+    padding-left: 10px;
+  }
+
+
+  /* .imageSearchIcon {
+    background-color: #A1A1A1;
+  } */

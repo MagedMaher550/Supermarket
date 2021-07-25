@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+
+  <!-- jQuery library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  
+  <!-- Latest compiled JavaScript for bootstrap 3-->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  
+  <!-- File specicifed styling start-->
+  <link rel="stylesheet" href="/../css/pages/product.css">
+  <!-- File specicifed styling end-->
+
+  <!-- Componenets Styling start -->
+  <link rel="stylesheet" href="/../css/components/sitemap.css">
+  <link rel="stylesheet" href="/../css/components/navbar.css">
+  <link rel="stylesheet" href="/../css/components/adminNavbar.css">
+  <link rel="stylesheet" href="/../css/components/header.css">
+  <!-- Componenets Styling end -->
+
+  <!-- General Styling start-->
+  <link rel="stylesheet" href="/../css/general/main.css">
+  <link rel="stylesheet" href="/../css/general/myFramework.css">
+  <!-- General Styling end-->
+
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css">  <!-- Font Awesome 5 -->
+  
+  <!-- Latest compiled and minified CSS for bootstrap 3-->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+  <!-- side nav js -->
+  <script src="/../../js/sideNav.js"></script>
+
+  <!-- Magnifying Glass js -->
+  <script src="/../../js/product.js"></script>
+
+  <title> Product </title>
+
+  
+</head>
+
+<body>
+
+  <!--First Headear Start-->
+  <%- include('../include/header'); %>
+  <!--End First Headear-->
+
+  <!--Users Navbar Start-->
+  <%- include('../include/navbar'); %>
+  <!-- Navbar End-->
+
+  <!--Admin Navbar Start-->
+  <%- include('../include/adminNavbar'); %>
+  <!--Admin Navbar End-->
+
+  <!-- Path start -->
+
+  <div class="container whiteBlock path">
+    <a class="displayInlineBlock pathLink" href="http://localhost:3050/shop/home"> Home </a>
+    <span class="displayInlineBlock">
+      <i class="fas fa-angle-right"></i>
+    </span>
+    <a class="displayInlineBlock pathLink" href="http://localhost:3050/shop/category/<%= product.mainCategory %> "> <%= product.mainCategory %> </a>
+    <span class="displayInlineBlock">
+      <i class="fas fa-angle-right"></i>
+    </span>
+    <a class="displayInlineBlock pathLink" href="#"> <%= product.name %> </a>
+  </div>
+
+    <!-- Path end -->
+
+    <!-- Content Start -->
+
+  <div class="container whiteBlock">
+    <div class="row">
+        <div class="col-xs-12 col-sm-4">
+            <div id="productImg" class="img-magnifier-containe">
+                <img src="<%= product.image %>" alt="" class="img-responsive customImg" id="myImage">
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-8 productDataSection">
+            <div class="row">
+                <p id="productName">
+                    <%= product.name %>
+                </p>            
+            </div>
+            <hr>
+            <div class="row">
+                <table class="myTable">
+                    <tr>
+                        <td> Product Code: </td>
+                        <td> <%= product._id %> </td>
+                    </tr>
+                    <tr>
+                        <td> Availability: </td>
+                        <td> In Stock </td>
+                    </tr>
+                </table>            
+            </div>
+            <hr>
+            <div class="row">
+                <p class="productPrice">
+                     EG <%= product.currentprice %>
+                </p>
+                <p class="productPrice">
+                    Points <%= productPriceInPoints %>
+                </p>
+            </div>
+            <div class="row">
+                <p class="displayInlineBlock"> Qty &nbsp;</p>
+                <form method="POST" action="<% if (!authentication)  { %> http://localhost:3050/auth/login <% } else { %> http://localhost:3050/shop/cart <% } %>" class="displayInlineBlock">
+                  <input hidden value="<%= product._id %>" name="id">
+                  <input type="number" value="1" name="productQty" id="productQty" min="0" class="quantityOfDeal">
+                  <button type="submit" class="shoppingCartButton">
+                  </button>
+                </form>
+              </div>
+              <hr>
+              <div class="row" >
+                <% if(authentication) { %>
+                <form method="POST" action="http://localhost:3050/shop/cart" class="displayInlineBlock">
+                  <input hidden value="<%= product._id %>" name="id">
+                  <button class="btn addTo" > Add to Cart </button>
+                </form>
+                <form method="POST" action="http://localhost:3050/shop/wishlist" class="displayInlineBlock">
+                  <input hidden value="<%= product._id %>" name="id">
+                  <button class="btn addTo" > Add to Whishlist </button>
+                </form>
+                <% } %>
+                <% if(admin) { %>
+                <button class="btn addTo" data-toggle="modal" data-target="#updateProductModel"> Edit </button>
+                               
+                <form method="POST" style="display: inline;" action="http://localhost:3050/admin/deleteProduct">
+                  <input hidden value="<%= product._id %>" name="id">
+                <button class="btn addTo" > Delete </button>
+                </form>
+                <% } %>
+              </div>
+
+        </div>
+    </div>
+    <div class="row">
+        <p class="descriptionHeader">
+            Description
+        </p>
+        <p class="productDescription">
+            <%= product.description %>
+        </p>
+    </div>
+  </div>
+
+    <!-- Content End -->
+
+
+       <!-- Footer Start -->
+        
+       <%- include('../include/footer'); %>
+      
+       <!-- Footer End -->
+
+       
+       <!-- Start update Product Modal -->
+<div class="modal fade col-xs-12" id="updateProductModel" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <form action="http://localhost:3050/admin/updateProduct" method="POST" >
+      <div class="modal-content">
+        <div class="modal-header">
+          <div class="close whiteDiv" data-dismiss="modal">x</div>
+          <h4 class="modal-title">Update Product</h4>
+        </div>
+        <div class="modal-body">
+
+          <div class="form-group">
+            <label >Product Name:</label><input type="text" class="form-control" name="productName" value="<%= product.name %>" id="productName">
+            <input type="hidden"  name="id" value="<%= product._id%>">
+          </div>
+          <div class="form-group">
+            <label >Category:</label>
+              <select name="mainCategory" id="mainCategory" class="form-control">
+                <option id="Meat&Fish" value="Meat&Fish">  Meat & Fish</option>
+                <option id="Bevereges" value="Bevereges">  Bevereges</option>
+                <option id="Dairy" value="Dairy">   Dairy</option>
+                <option id="Vegetables&fruit" value="Vegetables&fruit">  Vegetables & fruit</option>
+                <option id="Freezer">  Freezer</option>
+                <option  id="Bread&breadspreads" value="Bread&breadspreads">  Bread & bread spreads</option>
+                <option id="DriedGoods" value="DriedGoods">  Dried Goods</option>
+                <option id="Snacks" value="Snacks">  Snacks</option>
+                <option id="CareProducts" value="CareProducts">   Care Products </option>
+              </select>
+
+              <script>
+                var selectedItem = document.getElementById("<%= product.mainCategory%>");
+                selectedItem.selected = true;
+              </script>
+              
+          </div>
+          <div class="form-group">
+            <label >old price:</label><input value="<%= product.oldprice %>" type="text" class="form-control" name="oldPrice" id="oldPrice">
+          </div>
+          <div class="form-group">
+            <label >new price:</label><input value="<%= product.currentprice %>"  type="text" class="form-control" name="newPrice" id="newPrice">
+          </div>
+          <div class="form-group">
+            <!-- <label >Image:</label><input type="file" class="form-control" name="image" id="image"> -->
+            <label >Image:</label><input value="<%= product.image %>"  type="text" class="form-control" name="image" id="image">
+          </div>
+          <div class="form-group">
+            <label >description:</label><textarea maxlength="2000" class="form-control" name="description" id="description"><%= product.description %> </textarea>
+          </div>
+          <div class="form-group">
+            <label >Brand:</label>
+            <input class="form-control" name="brand" id="brand" value="<%= product.brand %>">
+          </div>
+        </div>
+        <div class="modal-footer">
+          <input type="submit" class="btn modelButton" value="update Product">
+        </div>
+      </div>
+    </form>
+      
+    </div>
+  </div>
+  <!-- End update Product Modal -->
+  
+  <script>
+    $(document).ready(function () {
+        $("#myImage").blowup({
+            scale: 1.5,
+            width: 150,
+            height: 150
+        });
+})
+    </script>
+</body>
+
+</html>

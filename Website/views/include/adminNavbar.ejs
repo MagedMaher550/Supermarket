@@ -1,0 +1,92 @@
+<!--Users Navbar Start-->
+<% if(admin) { %>
+<div class="container-fluid">
+  <div class="row adminNavBar ">
+
+    <div class="myFlex">
+
+      <div class="col-lg-10 col-md-10 hidden-sm hidden-xs center">
+        <div class="myLinks col-md-2  center">
+          <div>
+            <a class="myLinks " href="http://localhost:3050/admin/vieworders">
+
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                class="bi bi-eyeglasses" viewBox="0 0 16 16">
+                <path fill-rule="evenodd"
+                  d="M4 6a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm2.625.547a3 3 0 0 0-5.584.953H.5a.5.5 0 0 0 0 1h.541A3 3 0 0 0 7 8a1 1 0 0 1 2 0 3 3 0 0 0 5.959.5h.541a.5.5 0 0 0 0-1h-.541a3 3 0 0 0-5.584-.953A1.993 1.993 0 0 0 8 6c-.532 0-1.016.208-1.375.547zM14 8a2 2 0 1 0-4 0 2 2 0 0 0 4 0z" />
+              </svg>
+            </a>
+          </div>
+          <div>
+            <a class="myLinks " href="http://localhost:3050/admin/vieworders">
+              <span class="card-text">View Orders</span>
+            </a>
+          </div>
+        </div>
+        <div class="myLinks col-md-2  center">
+          <div>
+            <a class="myLinks" href="http://localhost:3050/admin/placedorders">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                class="bi bi-hourglass-split" viewBox="0 0 16 16">
+                <path fill-rule="evenodd"
+                  d="M2.5 15a.5.5 0 1 1 0-1h1v-1a4.5 4.5 0 0 1 2.557-4.06c.29-.139.443-.377.443-.59v-.7c0-.213-.154-.451-.443-.59A4.5 4.5 0 0 1 3.5 3V2h-1a.5.5 0 0 1 0-1h11a.5.5 0 0 1 0 1h-1v1a4.5 4.5 0 0 1-2.557 4.06c-.29.139-.443.377-.443.59v.7c0 .213.154.451.443.59A4.5 4.5 0 0 1 12.5 13v1h1a.5.5 0 0 1 0 1h-11zm2-13v1c0 .537.12 1.045.337 1.5h6.326c.216-.455.337-.963.337-1.5V2h-7zm3 6.35c0 .701-.478 1.236-1.011 1.492A3.5 3.5 0 0 0 4.5 13s.866-1.299 3-1.48V8.35zm1 0c0 .701.478 1.236 1.011 1.492A3.5 3.5 0 0 1 11.5 13s-.866-1.299-3-1.48V8.35z" />
+              </svg>
+            </a>
+          </div>
+          <div>
+            <a class="myLinks " href="http://localhost:3050/admin/placedorders">
+              <span class="card-text">Placed Orders</span>
+            </a>
+          </div>
+        </div>
+        <div class="myLinks col-md-2  center">
+          <a class="myLinks " href="http://localhost:3050/admin/enquiries">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard-data" viewBox="0 0 16 16">
+              <path d="M4 11a1 1 0 1 1 2 0v1a1 1 0 1 1-2 0v-1zm6-4a1 1 0 1 1 2 0v5a1 1 0 1 1-2 0V7zM7 9a1 1 0 0 1 2 0v3a1 1 0 1 1-2 0V9z"/>
+              <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/>
+              <path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/>
+            </svg>
+          </a>
+          <div>
+            <a class="myLinks " href="http://localhost:3050/admin/enquiries">
+              <span class="card-text">Enquiry</span>
+            </a>
+          </div>
+        </div>
+        <div class="myLinks col-md-2  center">
+          <div>
+            <a class="myLinks " href="http://localhost:3050/admin/addProduct">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus"
+                viewBox="0 0 16 16">
+                <path fill-rule="evenodd"
+                  d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z" />
+              </svg>
+          </div>
+          <span class="card-text">Add Products</span>
+          </a>
+
+        </div>
+
+        <div class="myLinks col-md-2  center">
+          <div>
+            <a class="myLinks" href="#" data-toggle="modal" data-target="#pointsModel">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cash"
+                viewBox="0 0 16 16">
+                <path fill-rule="evenodd"
+                  d="M15 4H1v8h14V4zM1 3a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1H1z" />
+                <path
+                  d="M13 4a2 2 0 0 0 2 2V4h-2zM3 4a2 2 0 0 1-2 2V4h2zm10 8a2 2 0 0 1 2-2v2h-2zM3 12a2 2 0 0 0-2-2v2h2zm7-4a2 2 0 1 1-4 0 2 2 0 0 1 4 0z" />
+              </svg>
+          </div>
+          <span class="card-text">Points</span>
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+<% } %>
+
+
+<!-- Navbar End-->

@@ -1,0 +1,24 @@
+@font-face {
+    src: url("../../fonts/Roboto-Regular.ttf");
+    font-family: Roboto-Regular;
+}
+
+.locationHeader {
+    font-family: Roboto-Regular;
+    font-size: 21px;
+}
+
+.infoBox {
+    border: 0.1em solid gray;
+    border-radius: 3px;
+    padding: 10px;
+}
+
+.infoText {
+    font-size: 15px;
+    padding: 15px;
+}
+
+.contact button {
+    float: right;
+}

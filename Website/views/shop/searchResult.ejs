@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+  <!-- jQuery library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+  <!-- Latest compiled JavaScript for bootstrap 3-->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+  <!-- File specicifed styling start-->
+  <link rel="stylesheet" href="/../css/pages/searchResults.css">
+  <!-- File specicifed styling end-->
+
+  <!-- Componenets Styling start -->
+  <link rel="stylesheet" href="/../css/components/sitemap.css">
+  <link rel="stylesheet" href="/../css/components/navbar.css">
+  <link rel="stylesheet" href="/../css/components/adminNavbar.css">
+  <link rel="stylesheet" href="/../css/components/header.css">
+  <!-- Componenets Styling end -->
+
+  <!-- General Styling start-->
+  <link rel="stylesheet" href="/../css/general/main.css">
+  <link rel="stylesheet" href="/../css/general/myFramework.css">
+  <!-- General Styling end-->
+
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css">  <!-- Font Awesome 5 -->
+  
+  <!-- Latest compiled and minified CSS for bootstrap 3-->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+  <!-- side nav js -->
+  <script src="/../../js/sideNav.js"></script>
+
+  <title> Search Results for Product </title>
+
+</head>
+
+<body>
+
+  <!--First Headear Start-->
+  <%- include('../include/header'); %>
+  <!--End First Headear-->
+
+  <!--Users Navbar Start-->
+  <%- include('../include/navbar'); %>
+  <!-- Navbar End-->
+
+  <!--Admin Navbar Start-->
+  <%- include('../include/adminNavbar'); %>
+  <!--Admin Navbar End-->
+
+ <!-- Path start -->
+
+ <div class="container whiteBlock path">
+  <a class="displayInlineBlock pathLink" href="http://localhost:3050/shop/home"> Home </a>
+  <span class="displayInlineBlock">
+    <i class="fas fa-angle-right"></i>
+  </span>
+</div>
+
+<!-- Path end -->
+
+<!-- number of results start -->
+
+<div class='container searchResultsNumber'>
+  <%=products.length %> results in product
+</div>
+
+<!-- number of results end -->
+
+<div class="container midSection">
+
+  <!-- Side Section Start -->
+  <div class="col-xs-12 col-md-3 filterBox whiteBlock hidden-sm hidden-xs">
+    <p class="filtersHeaderText"> Filter By </p>
+    <p class="filtersHeaderTextBrand"> Brand </p>
+    <!-- Brands Start -->
+    <div class="brandsScroll ">
+        <form action="#">
+          <% if (products.length > 0){ %>
+            <% for (let i = 0; i < brandkey.length; i++) {%>
+            <div class="brandCheckRow">
+                <input type="checkbox" name="<%= brandkey[i] %>" id="<%= brandkey[i] %>" class="checkmark"> 
+                <label for="<%= brandkey[i] %>" class="brandLabelText"> <%= brandkey[i] %> (<%= brandvalue[i] %>)</label>
+            </div>
+            <% } %>
+            <% }%>
+        </form>
+    </div>
+    <!-- Brands End -->
+
+    <button class="btn btn-primary" id="filterBtn"> Filter </button>
+    <p id="cancelCheckBtn"> Cancel </p>
+
+  </form>
+  </div>
+  <!-- Side Section End -->
+
+  <div class="col-xs-12 col-md-9" id="productsSearchResult">
+    <% if (products.length > 0){ %>
+      <% for(let product of products){ %>
+        <div class="col-xs-12 col-md-6 col-lg-4 whiteBlock productBox" data-brand ="<%= product.brand %>">
+          <div class="row center">
+            <a href="http://localhost:3050/shop/ProductDetails/<%= product._id %>">
+              <img src="<%= product.image %>" class="myImageClass" alt="daily staples one">
+            </a>
+          </div>
+  
+          <div class="Info">
+              <div class="row center">
+                  <p class="cutText"> <%= product.description %></p>
+                </div>
+                <div class="row center">
+                  <strong>
+                    <p class="dealDiscountText">
+                        <span class="toRed"> EG<%= product.currentprice %> </span>
+                        <span class="lineThrough toLightGrey"> EG<%= product.oldprice %></span>
+                    </p>
+                  </strong>
+                </div>
+                <div class="row center">
+                  <p class="displayInlineBlock"> Qty &nbsp;</p>
+                  
+                  <form method="POST" action="<% if (!authentication)  { %> http://localhost:3050/auth/login <% } else { %> http://localhost:3050/shop/cart <% } %>" class="displayInlineBlock">
+                    <input hidden value="<%= product._id %>" name="id">
+                    <input type="number" value="1" name="productQty" min="0" class="quantityOfDeal">
+                    <button type="submit" class="shoppingCartButton">
+                    </button>
+                  </form>
+
+                  <form method="POST" action="<% if (!authentication)  { %> http://localhost:3050/auth/login <% } else { %> http://localhost:3050/shop/wishlist <% } %>" class="displayInlineBlock">
+                    <input hidden value="<%= product._id %>" name="id">
+                    <button type="submit" class="wishlistButton">
+                    </button>
+                  </form>
+
+                </div>
+          </div>
+      </div>
+      <% } %>
+      <% } else { %>
+        <h1 class="center">Sorry No Products Found!</h1>
+      <% } %> 
+
+  </div>
+    
+  <!-- Brands Section End -->
+</div>
+  
+
+
+       <!-- Footer Start -->
+        
+       <%- include('../include/footer'); %>
+      
+       <!-- Footer End -->
+  <script src="../js/searchResult.js"></script>
+</body>
+
+</html>

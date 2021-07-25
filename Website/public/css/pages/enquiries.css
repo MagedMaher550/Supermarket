@@ -1,0 +1,93 @@
+@font-face {
+    src: url("../../fonts/Roboto-Regular.ttf");
+    font-family: Roboto-Regular;
+}
+
+
+tr td{
+    font-family: Roboto-Regular;
+    font-size: 17px;
+    padding: 15px !important;
+}
+
+/* Table BLock start */
+
+
+table { 
+    width: 100%; 
+    border-collapse: collapse; 
+  }
+  /* Zebra striping */
+  tr:nth-of-type(odd) { 
+    background: #eee; 
+  }
+  th { 
+    background: #000068; 
+    color: white; 
+    font-weight: bold; 
+  }
+  td, th { 
+    padding: 6px; 
+    border: 1px solid #ccc; 
+    text-align: left; 
+  }
+
+  @media 
+only screen and (max-width: 760px),
+(min-device-width: 768px) and (max-device-width: 1024px)  {
+
+	/* Force table to not be like tables anymore */
+    .tableDiv{margin-top: 90px !important;}
+
+	table, thead, tbody, th, td, tr { 
+		display: block !important ; 
+	}
+	
+	/* Hide table headers (but not display: none;, for accessibility) */
+	thead tr { 
+		position: absolute !important ; 
+		top: -9999px !important ;
+		left: -9999px !important ;
+	}
+	
+	tr { border: 1px solid #ccc !important ; }
+	
+	td { 
+		/* Behave  like a "row" */
+		border: none !important ;
+		border-bottom: 1px solid #eee !important ; 
+		position: relative !important ;
+		padding-left: 50% !important; 
+	}
+	
+	td:before { 
+		/* Now like a table header */
+		position: absolute !important;
+		/* Top/left values mimic padding */
+		top: 6px !important;
+		left: 6px !important;
+		width: 45% !important; 
+		padding-right: 10px !important; 
+		white-space: nowrap !important;
+        font-weight: bolder !important;
+	}
+	
+	/*
+	Label the data
+	*/
+	td:nth-of-type(1):before { content: "ID:"; }
+	td:nth-of-type(2):before { content: "Date:"; }
+	td:nth-of-type(3):before { content: "Adress:"; }
+	td:nth-of-type(4):before { content: "Cart:"; }
+	td:nth-of-type(5):before { content: "Price:"; }
+	td:nth-of-type(6):before { content: "Ready:"; }
+	td:nth-of-type(7):before { content: "Arrived:"; }
+}
+/* Table BLock end */
+
+button:disabled,
+button[disabled]{
+  border: 1px solid #999999;
+  background-color: #cccccc;
+  color: #666666;
+}

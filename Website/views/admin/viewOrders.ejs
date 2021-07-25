@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- jQuery library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+  <!-- Data Tables Plugin -->
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.24/css/jquery.dataTables.css">  
+  <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.js"></script>
+
+  
+  <!-- Latest compiled JavaScript for bootstrap 3-->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+  <!-- File specicifed styling start-->
+  <link rel="stylesheet" href="../css/pages/viewOrders.css">
+  <!-- File specicifed styling end-->
+
+  <!-- Componenets Styling start -->
+  <link rel="stylesheet" href="../css/components/sitemap.css">
+  <link rel="stylesheet" href="../css/components/navbar.css">
+  <link rel="stylesheet" href="../css/components/adminNavbar.css">
+  <link rel="stylesheet" href="../css/components/header.css">
+  <!-- Componenets Styling end -->
+
+  <!-- General Styling start-->
+  <link rel="stylesheet" href="../css/general/main.css">
+  <link rel="stylesheet" href="../css/general/myFramework.css">
+  <!-- General Styling end-->
+
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css">  <!-- Font Awesome 5 -->
+  
+  <!-- Latest compiled and minified CSS for bootstrap 3-->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+  <!-- side nav js -->
+  <script src="../../js/sideNav.js"></script>
+
+  <title>Home</title>
+
+</head>
+
+<body>
+
+
+  <!--First Headear Start-->
+  <%- include('../include/header'); %>
+  <!--End First Headear-->
+
+  <!--Users Navbar Start-->
+  <%- include('../include/navbar'); %>
+  <!-- Navbar End-->
+
+  <!--Admin Navbar Start-->
+  <%- include('../include/adminNavbar'); %>
+  <!--Admin Navbar End-->
+
+
+    <div class="container-fluid">
+        <!-- Table Block end -->
+    <div class="tableDiv">
+      <% if (orders.length > 0){ %>
+        <table class="table table-responsive" id="table_id">
+          <thead>
+          <tr>
+            <th class="hideOnSmallScreens">ID</th>
+            <th>Date</th>
+            <th class="hideOnSmallScreens hideOnMediumScreens">Adress</th>
+            <th>Cart</th>
+            <th>Price</th>
+            <th>Ready</th>
+            <th>Shipped</th>
+            <th>Arrived</th>
+          </tr>
+          </thead>
+          <tbody>
+            <% for(let order of orders){ %>
+          <tr class="tabelEntry">
+            <td class="center verticalCenter hideOnSmallScreens">
+              <%= order._id %>
+            </td>
+            <td class="center verticalCenter">
+              <%= order.date %>
+            </td>
+            <td class="center verticalCenter hideOnSmallScreens hideOnMediumScreens">
+              <%= order.user.address %>              
+            </td>
+            <td class="center verticalCenter">
+                <% for(let productData of order.products){ %> 
+                  <%= productData.product.name %>
+                  (<%= productData.quantity %>)
+                  <br> 
+                <%} %>
+              </td>
+            <td class="center verticalCenter">
+              <%= order.orderPrice %>
+            </td>
+            <td class="center verticalCenter">
+              <%= order.ready %>                            
+            </td>
+            <td class="center verticalCenter">
+              <%= order.shipped %>
+            </td>
+            <td class="center verticalCenter">
+              <%= order.arrived %>
+            </td>
+          </tr>
+          <% } %>
+          </tbody>
+        </table>
+      <% } else { %>
+        <h1 class="center verticalCenter">No Orders Found!</h1>
+      <% } %> 
+    </div>  
+  <!-- Table Block end -->
+    </div>
+
+  <!--footer Start-->
+  <%- include('../include/footer'); %>
+  <!-- footer end-->
+
+  <script src="../js/filters.js"></script>
+</body>
+</html>

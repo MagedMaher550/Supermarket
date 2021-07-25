@@ -1,0 +1,73 @@
+/* Carousel start */
+.customCarousel {
+  margin-top: 60px !important; /* Push the carousel down 60px */
+}
+/* Carousel end */
+
+/* Categories Block start */
+
+.categoriesBlock {
+  margin-top: 60px;
+  margin-bottom: 40px;
+  padding-bottom: 20px;
+  background-color: #ffffff;
+}
+
+.blocksIcon {
+  color: #CD0C2B;
+  font-size: 17px;
+  padding-left: 10px;
+}
+
+.blockHeaderText {
+  display: inline-block;
+  font-size: 18px;
+  padding: 10px 0px 5px 5px;
+  font-weight: 600;
+}
+
+.blockDivider {
+  margin: 0px !important;
+  padding-bottom: 30px;
+}
+
+/* Categories Block end */
+
+/* Deal of the Day Start */
+
+.dealHeaderText {
+  margin-top: 20px;
+  color: #78797a;
+  font-size: 16px;
+}
+
+.dealDiscountText {
+  font-size: 16px;
+}
+​
+/* Deal of the Day End */
+
+/* Swiper start */
+
+.swiper-container, .swiper1 {
+  width: 100%;
+  height: 100%;
+  margin: 20px auto;
+}
+
+/* Swiper End */
+
+.midImages {
+  margin-top: 40px;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.midImages img{
+  cursor: pointer;
+}
+
+
+.myImg {
+  height: 200px !important;
+}

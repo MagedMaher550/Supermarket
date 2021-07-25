@@ -1,0 +1,192 @@
+/* THIS FILE CONTAINS GENERAL STYLES THAT ARE APPLIED ON DIFFERENT VIEWS AND SCREENS */
+
+* {
+  padding: 0px;
+  margin: 0px;
+}
+
+.whiteBlock {
+  background-color: white;
+  padding: 10px 0px 5px 10px;
+  margin-bottom: 30px;
+}
+
+/* Path start */
+
+.path p{
+  font-size: 15px;
+  padding-right: 10px;
+  padding-left: 10px;
+}
+.path i {
+  font-size: 17px;
+}
+
+.path {
+  margin-top: 20px !important;
+}
+
+/* Path end */
+
+  /* Path links style start*/
+.pathLink {
+  text-decoration: none;
+  color: black;
+  padding: 5px 10px;
+  font-size: 14px;
+  transition: 0.4s;
+  cursor: pointer;
+}
+.pathLink:hover {
+  color: red;
+  text-decoration: none;
+}
+  /* Path links style end*/
+
+.img-responsive {
+  display: inline-block !important;
+}
+
+body{
+  background-color: #F6F6F6 !important;
+  overflow-x: hidden; 
+}
+
+    /* add to wishlist and compare product style start */
+    /* THE FOLLOWING STYLES WILL BE ONLY APPLIED IF THE USER CHOOSE TO SHOW PRODUCTS AS A LIST */
+
+    .prodcutIcons {
+      visibility: hidden;     /* toggle this with js when the user click the list and grid buttons*/
+      padding-left: 10px;
+      padding-top: 10px;
+ }
+ 
+ .productIconButton {
+     height: 40px;
+     width: 40px;
+     border-radius: 50%;
+     background-color: white;
+     display: inline-block;
+ }
+     /* Add border to icons only in list mode */
+     .addBorderToIcons {
+         border: 1px solid rgb(207, 207, 207);
+ }
+     /* add to wishlist and compare product style end */
+ 
+     /* icons of add to wishlist and compare product style start */
+ .productIconButton:nth-child(1)::after , .productIconButton:nth-child(2)::after {
+     font-family: 'Font Awesome 5 Free';
+     font-weight: 900;
+     font-size: 17px;
+     color: grey;
+     position: absolute;
+     top: 50%;
+     left: 50%;
+     transform: translate(-50%, -50%);
+ }
+ 
+ .productIconButton:nth-child(2)::after {
+     content: "\f7a5";
+ }
+ 
+ .productIconButton:nth-child(1)::after {
+     content: "\f004";
+ }
+ 
+ .productIconButton:nth-child(1):hover::after , .productIconButton:nth-child(2):hover::after {
+     color: white;
+     font-size: 15px;
+ }
+ 
+ .productIconButton:hover {
+     background-color: #CD0C2B;
+ }
+ 
+     /* These Medias adjust the padding between the image of the product and its info in case of grid appearance*/
+ /* @media(max-width: 768px){
+     .Info {
+         padding-left: 50px;
+     }
+ }
+ @media(min-width: 768px) and (max-width: 992px) {
+     .Info {
+         padding-left: 150px;
+     }
+ } */
+     /* icons of add to wishlist and compare product style end */
+
+    /* hover icons of add to wishlist and compare product style start */
+    
+    .showIconsOnHover .hideIcons {
+      visibility: hidden;
+  }
+  
+  .showIconsOnHover:hover .hideIcons {
+      visibility: visible;
+  }
+      /* hover icons of add to wishlist and compare product style end */
+
+/* Shopping cart button and quantity input styling start */
+
+.quantityOfDeal, .shoppingCartButton,.wishlistButton {
+  display: inline-block;
+  padding: 1px 5px;
+  font-size: 17px;
+  -webkit-appearance: none;
+  border: 1px solid rgb(196, 189, 189);
+}
+
+.quantityOfDeal {
+  width: 50px;
+  border-radius: 5px;
+  border: 1px solid rgb(196, 189, 189);
+}
+
+.quantityOfDeal:active {
+  border: 1px solid hsl(0, 100%, 46%);
+}
+
+.shoppingCartButton,.wishlistButton {  
+  width: 50px;
+  border-radius: 5px;
+  background-color: white;
+  transition: 0.6s;
+}
+.wishlistButton::after, .shoppingCartButton::after {
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+  font-size: 15px;
+  color: grey;
+}
+.wishlistButton::after {
+  content: "\f004";
+}
+
+.shoppingCartButton::after {
+  content: "\f291";
+}
+
+.shoppingCartButton:hover::after, .wishlistButton:hover::after {
+  color: white;
+}
+
+.shoppingCartButton:hover, .wishlistButton:hover{
+  background-color: #CD0C2B;
+}
+
+/* Shopping cart button and quantity input styling end */
+
+
+.productImageContainer {
+  height: 150px;
+}
+
+.sliderProductImageContainer {
+  height: 240px;
+}
+
+.DealProductImageContainer {
+  height: 250px;
+}
+

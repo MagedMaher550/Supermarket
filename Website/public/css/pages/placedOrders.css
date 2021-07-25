@@ -1,0 +1,114 @@
+
+
+/* Filter BLock start */
+
+    /*  list icons  start*/
+
+.filteringBlock {
+    padding: 5px;
+    cursor: pointer;    
+}
+
+.filteringIcons i {
+    font-size: 30px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+    /*  list icons  end*/
+
+    /* filters dropdowns start */
+    
+    .SortBy {
+        padding-right: 10px;
+        padding-left: 10px;
+    }
+    
+    .SortBy select{
+        width: 65%;
+        padding: 5px;
+        border-radius: 3px;
+        border: 1px solid rgb(207, 207, 207);
+    }
+
+    .SortBy input{
+        width: 65%;
+        padding: 5px;
+        border-radius: 3px;
+        border: 1px solid rgb(207, 207, 207);
+    }
+
+    .SortBy span{
+        width: 25%;
+        padding: 3px;
+        font-size: 16px;
+    }
+
+    .ordersButton{
+        background-color: #000068;
+        color: white;
+        padding:5px;
+        padding-left: 15px;
+        padding-right: 15px;
+        border: none;
+    }
+
+    /* filters dropdowns end */
+
+/* Filter BLock end */
+
+
+/* Table BLock start */
+
+
+table { 
+    width: 100%; 
+    border-collapse: collapse; 
+  }
+  /* Zebra striping */
+  tr:nth-of-type(odd) { 
+    background: #eee !important; 
+  }
+  th { 
+    background: #000068; 
+    color: white; 
+    font-weight: bold; 
+  }
+  td, th { 
+    padding: 6px; 
+    border: 1px solid #ccc; 
+    text-align: left; 
+  }
+
+@media(max-width: 768px) {
+    .hideOnSmallScreens {
+        display: none;
+    }
+}
+
+@media(min-width: 768px) and (max-width: 992px){
+    .hideOnMediumScreens {
+        display: none;
+    }
+}
+
+#table_id_filter label, .dataTables_length label {
+    padding-top: 30px;
+    padding-bottom: 20px;
+}
+
+#table_id_info, #table_id_paginate, .paginate_button {
+    padding-top: 20px;
+    padding-bottom: 30px;
+}
+
+#table_id_info {
+    font-weight: 600;
+    padding-top: 23px !important;
+}
+
+button:disabled,
+button[disabled]{
+  border: 1px solid #999999;
+  background-color: #cccccc;
+  color: #666666;
+}

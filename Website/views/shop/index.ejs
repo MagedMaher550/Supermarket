@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Slider Start -->
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css">
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+
+  <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <!-- Slider End -->
+
+
+  <!-- jQuery library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+  <!-- Latest compiled JavaScript for bootstrap 3-->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+  <!-- File specicifed styling start-->
+  <link rel="stylesheet" href="../css/pages/index.css">
+  <!-- File specicifed styling end-->
+
+  <!-- Componenets Styling start -->
+  <link rel="stylesheet" href="../css/components/sitemap.css">
+  <link rel="stylesheet" href="../css/components/navbar.css">
+  <link rel="stylesheet" href="../css/components/adminNavbar.css">
+  <link rel="stylesheet" href="../css/components/header.css">
+  <!-- Componenets Styling end -->
+
+  <!-- General Styling start-->
+  <link rel="stylesheet" href="../css/general/main.css">
+  <link rel="stylesheet" href="../css/general/myFramework.css">
+  <!-- General Styling end-->
+
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css">  <!-- Font Awesome 5 -->
+  
+  <!-- Latest compiled and minified CSS for bootstrap 3-->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+  <!-- side nav js -->
+  <script src="../../js/sideNav.js"></script>
+
+  <title>Home</title>
+
+</head>
+
+<body>
+
+  <!--First Headear Start-->
+  <%- include('../include/header'); %>
+  <!--End First Headear-->
+
+  <!--Users Navbar Start-->
+  <%- include('../include/navbar'); %>
+  <!-- Navbar End-->
+
+  <!--Admin Navbar Start-->
+  <%- include('../include/adminNavbar'); %>
+  <!--Admin Navbar End-->
+
+  <!-- Carousel Start -->
+  <div class="container customCarousel">
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+      <!-- Wrapper for slides -->
+      <div class="carousel-inner">
+        <div class="item active">
+          <a href="http://localhost:3050/shop/home">
+            <img src="../images/c1.jpg" alt="Los Angeles" style="width:100%;">
+          </a>
+        </div>
+
+        <div class="item">
+          <a href="http://localhost:3050/shop/home">
+            <img src="../images/c2.jpg" alt="Chicago" style="width:100%;">
+          </a>
+        </div>
+
+        <div class="item">
+          <a href="http://localhost:3050/shop/home">
+            <img src="../images/c3.png" alt="New york" style="width:100%;">
+          </a>
+        </div>
+      </div>
+
+      <!-- Left and right controls -->
+      <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="right carousel-control" href="#myCarousel" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+  </div>
+  <!-- Carousel End -->
+
+
+
+  <!-- Deal of the day start -->
+  <div class="container categoriesBlock">
+    <div class="row">
+      <i class="fas fa-square blocksIcon"></i>
+      <p class="blockHeaderText"> DEAL OF THE DAY</p>
+      <hr class="blockDivider">
+    </div>
+    <div class="swiper-container swiper1">
+      <div class="swiper-wrapper">
+        <% if (products.length > 0){ %>
+          <% for(let product of products){ %>
+            <% if(product.currentprice < product.oldprice) { %> 
+              <div class="swiper-slide">
+                <div class="col-xs-12">
+                  <div class="col-xs-6 DealProductImageContainer">
+                    <a href="http://localhost:3050/shop/ProductDetails/<%= product._id %>" >
+                      <img src="<%= product.image %>" alt="daily staples one" class="img-responsive verticalImgCenter myImg">
+                    </a>
+                  </div>
+                  <div class="col-xs-6">
+                    <div class="row">
+                      <strong>
+                        <p class="dealHeaderText"> <%= product.name %> </p>
+                      </strong>
+                      <p> <%= product.description %> </p>
+                      <hr class="toBlack">
+                      <strong>
+                        <p class="dealDiscountText">
+                          <span class="toRed"> EG <%= product.currentprice %> </span>
+                          <span class="lineThrough toLightGrey"> EG <%= product.oldprice %></span>
+                        </p>
+                      </strong>
+                    </div>
+                    <div class="row">
+                      <p class="displayInlineBlock"> Qty &nbsp;</p>
+                      
+                      <form method="POST" action="<% if (!authentication)  { %> http://localhost:3050/auth/login <% } else { %> http://localhost:3050/shop/cart <% } %>" class="displayInlineBlock">
+                        <input hidden value="<%= product._id %>" name="id">
+                        <input type="number" value="1" name="productQty" id="productQty" min="1" max="10" class="quantityOfDeal">
+                        <button type="submit" class="shoppingCartButton">
+                        </button>
+                      </form>
+    
+                      <form method="POST" action="<% if (!authentication)  { %> http://localhost:3050/auth/login <% } else { %> http://localhost:3050/shop/wishlist <% } %>" class="displayInlineBlock">
+                        <input hidden value="<%= product._id %>" name="id">
+                        <button type="submit" class="wishlistButton">
+                        </button>
+                      </form>
+    
+                    </div>
+                  </div>
+                </div>
+              </div>
+            <% } %> 
+          <% } %>
+        <% } else { %>
+          <h1>No Products Found!</h1>
+        <% } %> 
+
+      </div>
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+    </div>
+  </div>
+  <!-- Deal of the day End -->
+
+  <div class="container midImages">
+    <div class="row">
+      <div class="col-xs-6">
+        <img src="../images/mid1.jpg" alt="mid image one" class="img-responsive">
+      </div>
+
+      <div class="col-xs-6">
+        <img src="../images/mid2.jpg" alt="mid image two" class="img-responsive">
+      </div>
+    </div>
+  </div>
+
+  <!-- Daily Staples start -->
+  <div class="container categoriesBlock">
+    <div class="row">
+      <i class="fas fa-square blocksIcon"></i>
+      <p class="blockHeaderText"> DAILY STAPLES</p>
+      <hr class="blockDivider slidersDivider">
+    </div>
+    <div class="swiper-container swiper2">
+      <div class="swiper-wrapper">
+        <% if (products.length > 0){ %>
+          <% for(let product of products){ %>
+        <div class="swiper-slide col-xs-6 col-md-4 col-lg-3">
+          <div class="row center sliderProductImageContainer">
+            <a href="http://localhost:3050/shop/ProductDetails/<%= product._id %>" class="positionRelative showIconsOnHover">
+              <img src="<%= product.image %>" alt="daily staples one" class="img-responsive myImg">
+            </a>
+          </div>
+          <div class="row center">
+            <p class="cutText"> <%= product.description %></p>
+          </div>
+          <div class="row center">
+            <strong>
+              <p class="toRed"> EG <%= product.currentprice %> EG</p>
+            </strong>
+          </div>
+          <div class="row">
+            <p class="displayInlineBlock"> Qty &nbsp;</p>
+            
+            <form method="POST" action="<% if (!authentication)  { %> http://localhost:3050/auth/login <% } else { %> http://localhost:3050/shop/cart <% } %>" class="displayInlineBlock">
+              <input hidden value="<%= product._id %>" name="id">
+              <input type="number" value="1" name="productQty" id="productQty" min="1" max="10" class="quantityOfDeal">
+              <button type="submit" class="shoppingCartButton">
+              </button>
+            </form>
+
+            <form method="POST" action="<% if (!authentication)  { %> http://localhost:3050/auth/login <% } else { %> http://localhost:3050/shop/wishlist <% } %>" class="displayInlineBlock">
+              <input hidden value="<%= product._id %>" name="id">
+              <button type="submit" class="wishlistButton">
+              </button>
+            </form>
+
+          </div>
+        </div>
+        <% } %>
+        <% } else { %>
+          <h1>No Products Found!</h1>
+        <% } %> 
+
+      </div>
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+    </div>
+  </div>
+  <!-- Daily Staples end -->
+
+  <!-- Cleaning and Household start -->
+  <div class="container categoriesBlock">
+    <div class="row">
+      <i class="fas fa-square blocksIcon"></i>
+      <p class="blockHeaderText"> CLEANING AND HOUSEHOLD</p>
+      <hr class="blockDivider slidersDivider">
+    </div>
+    <div class="swiper-container swiper2">
+      <div class="swiper-wrapper">
+        <% if (products.length > 0){ %>
+          <% for(let product of products){ %>
+        <div class="swiper-slide col-xs-6 col-md-4 col-lg-3">
+          <div class="row center sliderProductImageContainer">
+            <a href="http://localhost:3050/shop/ProductDetails/<%= product._id %>" class="positionRelative showIconsOnHover">
+              <img src="<%= product.image %>" alt="daily staples one" class="img-responsive myImg">
+            </a>
+          </div>
+          <div class="row center">
+            <p class="cutText"> <%= product.description %></p>
+          </div>
+          <div class="row center">
+            <strong>
+              <p class="toRed"> EG <%= product.currentprice %> </p>
+            </strong>
+          </div>
+          <div class="row">
+            <p class="displayInlineBlock"> Qty &nbsp;</p>
+            
+            <form method="POST" action="<% if (!authentication)  { %> http://localhost:3050/auth/login <% } else { %> http://localhost:3050/shop/cart <% } %>" class="displayInlineBlock">
+              <input hidden value="<%= product._id %>" name="id">
+              <input type="number" value="1" name="productQty" id="productQty" min="1" max="10" class="quantityOfDeal">
+              <button type="submit" class="shoppingCartButton">
+              </button>
+            </form>
+
+            <form method="POST" action="<% if (!authentication)  { %> http://localhost:3050/auth/login <% } else { %> http://localhost:3050/shop/wishlist <% } %>" class="displayInlineBlock">
+              <input hidden value="<%= product._id %>" name="id">
+              <button type="submit" class="wishlistButton">
+              </button>
+            </form>
+
+          </div>
+        </div>
+        <% } %>
+        <% } else { %>
+          <h1>No Products Found!</h1>
+        <% } %> 
+
+      </div>
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+    </div>
+  </div>
+  <!-- Cleaning and Household end -->
+
+  <!-- FRUITS AND VEGETABLE start -->
+  <div class="container categoriesBlock">
+    <div class="row">
+      <i class="fas fa-square blocksIcon"></i>
+      <p class="blockHeaderText"> FRUITS AND VEGETABLE </p>
+      <hr class="blockDivider slidersDivider">
+    </div>
+    <div class="swiper-container swiper2">
+      <div class="swiper-wrapper">
+
+        <% if (products.length > 0){ %>
+          <% for(let product of products){ %>
+        <div class="swiper-slide col-xs-6 col-md-4 col-lg-3">
+          <div class="row center sliderProductImageContainer">
+            <a href="http://localhost:3050/shop/ProductDetails/<%= product._id %>" class="positionRelative showIconsOnHover">
+              <img src="<%= product.image %>" alt="daily staples one" class="img-responsive myImg">
+            </a>
+          </div>
+          <div class="row center">
+            <p class="cutText"> <%= product.description %></p>
+          </div>
+          <div class="row center">
+            <strong>
+              <p class="toRed">EG <%= product.currentprice %> </p>
+            </strong>
+          </div>
+          <div class="row">
+            <p class="displayInlineBlock"> Qty &nbsp;</p>
+            
+            <form method="POST" action="<% if (!authentication)  { %> http://localhost:3050/auth/login <% } else { %> http://localhost:3050/shop/cart <% } %>" class="displayInlineBlock">
+              <input hidden value="<%= product._id %>" name="id">
+              <input type="number" value="1" name="productQty" id="productQty" min="1" max="10" class="quantityOfDeal">
+              <button type="submit" class="shoppingCartButton">
+              </button>
+            </form>
+
+            <form method="POST" action="<% if (!authentication)  { %> http://localhost:3050/auth/login <% } else { %> http://localhost:3050/shop/wishlist <% } %>" class="displayInlineBlock">
+              <input hidden value="<%= product._id %>" name="id">
+              <button type="submit" class="wishlistButton">
+              </button>
+            </form>
+
+          </div>
+        </div>
+        <% } %>
+        <% } else { %>
+          <h1>No Products Found!</h1>
+        <% } %> 
+
+
+      </div>
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+    </div>
+  </div>
+  <!-- FRUITS AND VEGETABLE end -->
+
+  <div class="container midImages">
+    <div class="row">
+      <div class="col-xs-6">
+        <img src="../images/be1.jpg" alt="before end image one" class="img-responsive">
+      </div>
+
+      <div class="col-xs-6">
+        <img src="../images/be2.jpg" alt="before end image two" class="img-responsive myImg">
+      </div>
+    </div>
+  </div>
+
+  <!-- TREDING PRODUCTS start -->
+  <div class="container categoriesBlock">
+    <div class="row">
+      <i class="fas fa-square blocksIcon"></i>
+      <p class="blockHeaderText"> TREDING PRODUCTS </p>
+      <hr class="blockDivider slidersDivider">
+    </div>
+    <div class="swiper-container swiper2">
+      <div class="swiper-wrapper">
+        <% if (products.length > 0){ %>
+          <% for(let product of products){ %>
+        <div class="swiper-slide col-xs-6 col-md-4 col-lg-3">
+          <div class="row center sliderProductImageContainer">
+            <a href="http://localhost:3050/shop/ProductDetails/<%= product._id %>" class="positionRelative showIconsOnHover">
+              <img src="<%= product.image %>" alt="daily staples one" class="img-responsive myImg">
+            </a>
+          </div>
+          <div class="row center">
+            <p class="cutText"> <%= product.description %></p>
+          </div>
+          <div class="row center">
+            <strong>
+              <p class="toRed"> EG <%= product.currentprice %> </p>
+            </strong>
+          </div>
+          <div class="row">
+            <p class="displayInlineBlock"> Qty &nbsp;</p>
+            
+            <form method="POST" action="<% if (!authentication)  { %> http://localhost:3050/auth/login <% } else { %> http://localhost:3050/shop/cart <% } %>" class="displayInlineBlock">
+              <input hidden value="<%= product._id %>" name="id">
+              <input type="number" value="1" name="productQty" id="productQty" min="1" max="10" class="quantityOfDeal">
+              <button type="submit" class="shoppingCartButton">
+              </button>
+            </form>
+
+            <form method="POST" action="<% if (!authentication)  { %> http://localhost:3050/auth/login <% } else { %> http://localhost:3050/shop/wishlist <% } %>" class="displayInlineBlock">
+              <input hidden value="<%= product._id %>" name="id">
+              <button type="submit" class="wishlistButton">
+              </button>
+            </form>
+
+          </div>
+        </div>
+        <% } %>
+        <% } else { %>
+          <h1>No Products Found!</h1>
+        <% } %> 
+      </div>
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+    </div>
+  </div>
+
+  <!-- TREDING PRODUCTS end -->
+
+  <!-- Brands start -->
+
+  <div class="container categoriesBlock">
+    <div class="swiper-container swiper3">
+      <div class="swiper-wrapper">
+
+        <div class="swiper-slide col-lg-2 col-sm-3 col-xs-4">
+          <img src="../images/ls1.png" alt="last slider one">
+        </div>
+        <div class="swiper-slide col-lg-2 col-sm-3 col-xs-4">
+          <img src="../images/ls2.png" alt="last slider one">
+        </div>
+        <div class="swiper-slide col-lg-2 col-sm-3 col-xs-4">
+          <img src="../images/ls3.png" alt="last slider one">
+        </div>
+        <div class="swiper-slide col-lg-2 col-sm-3 col-xs-4">
+          <img src="../images/ls4.png" alt="last slider one">
+        </div>
+        <div class="swiper-slide col-lg-2 col-sm-3 col-xs-4">
+          <img src="../images/ls5.png" alt="last slider one">
+        </div>
+        <div class="swiper-slide col-lg-2 col-sm-3 col-xs-4">
+          <img src="../images/ls6.png" alt="last slider one">
+        </div>
+        <div class="swiper-slide col-lg-2 col-sm-3 col-xs-4">
+          <img src="../images/ls7.png" alt="last slider one">
+        </div>
+        <div class="swiper-slide col-lg-2 col-sm-3 col-xs-4">
+          <img src="../images/ls8.png" alt="last slider one">
+        </div>
+        <div class="swiper-slide col-lg-2 col-sm-3 col-xs-4">
+          <img src="../images/ls9.png" alt="last slider one">
+        </div>
+        <div class="swiper-slide col-lg-2 col-sm-3 col-xs-4">
+          <img src="../images/ls10.png" alt="last slider one">
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Brands end -->
+
+<!-- Footer Start -->
+        
+<%- include('../include/footer'); %>
+      
+<!-- Footer End -->
+  
+  <script src="../js/sliders.js"></script>
+</body>
+
+</html>

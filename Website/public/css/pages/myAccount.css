@@ -1,0 +1,77 @@
+.midSection {
+    background-color: white;
+    margin-bottom: 30px;
+}
+
+@font-face {
+    src: url("/fonts/Roboto-Regular.ttf");
+    font-family: Roboto-Regular;
+}
+
+.sidenavBrand {
+    background-color: white;
+    margin-top: 24px;
+    margin-right: 15px;
+}
+
+.sidenavBrand a{
+    text-decoration: none;
+    display: block;
+    /* border: 1px solid #DDDDDD;  */
+    border-top: 1px solid #a5a3a3;
+    border-right: 1px solid #a5a3a3;
+    border-left: 1px solid #a5a3a3;
+    border-radius: 2px;
+    padding: 9px;
+    font-size: 14px;
+    color: black;
+    transition: 0.3s;
+    font-family: Roboto-Regular;
+}
+
+.sidenavBrand a:last-child {
+    border-bottom: 1px solid #a5a3a3;
+}
+
+.sidenavBrand a:hover {
+    color: #000068;
+}
+
+#greenSqaure {
+    background-color: #000068;
+    width: 17px;
+    height: 17px;
+    margin-right: 5px;
+}
+
+#brandsHeaderText, #greenSqaure {
+    display: inline-block;
+}
+
+.leftSectionElement {
+    /* margin-top: 15px; */
+    margin-bottom: 15px;
+}
+
+.brandBox, .letterBox {
+    padding: 10px;
+    border: 1px solid #DDDD;
+}
+.letterBox {
+    margin-bottom: 8px;
+}
+
+
+@media (min-width: 992px) {
+    .brandName {
+        display: inline-block;
+        padding-right: 20px;
+    }
+}
+
+@media (max-width: 992px) {
+    .brandName {
+        display: block;
+    }
+}
+

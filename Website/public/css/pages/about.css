@@ -1,0 +1,82 @@
+body {
+    background-color: white !important;
+}
+
+.aboutImg {
+    background-image: url('../../images/aboutImage.jpg');
+    margin-bottom: 30px;
+    height: 250px;
+}
+
+.aboutImg .imgText{
+    color: white;
+    line-height: 250px;
+    font-size: 45px;
+    font-weight: 900;
+}
+
+@font-face {
+    font-family: aboutTextFont;
+    src: url('../../fonts/Cairo-Regular.ttf');
+  }
+
+ .customImgParent:nth-child(1) {
+     float: right !important;
+ }
+
+.aboutText {
+    font-family: aboutTextFont;
+    font-size: 19px;
+    font-weight: 400;
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+.aboutText span {
+    color: #125ba8;
+    font-size: 25px;
+    font-weight: 800;
+}
+
+.section {
+    padding: 0px;
+}
+
+.section .aboutText {
+    margin-top: 0px !important;
+}
+
+.sectionHeader {
+    color: #002575;
+    font-size: 24px;
+    font-family: aboutTextFont;
+    font-weight: 600;
+    text-decoration: none solid rgb(0, 37, 117);
+    text-align: left;
+    padding: 0px !important;
+}
+
+.customSectionImg {
+    height: 300px;
+    width: 400px;
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+}
+
+.sectionImg {
+    padding: 0px;
+}
+
+.floatLeft {
+    float: left;
+}
+
+.floatRight {
+    float: right;
+}
+
+.fillWidth {
+    width: 90% !important;
+    margin-right: 5%;
+    margin-left: 5%;
+}

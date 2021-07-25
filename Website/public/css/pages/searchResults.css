@@ -1,0 +1,139 @@
+@font-face {
+    src: url("../../fonts/Cairo-Regular.ttf");
+    font-family: Cairo-Regular;
+}
+
+@font-face {
+    src: url("../../fonts/Roboto-Regular.ttf");
+    font-family: Roboto-Regular;
+}
+
+
+.searchResultsNumber {
+    font-family: Roboto-Regula;
+    font-size: 19px;
+    margin-bottom: 20px;
+}
+.filtersHeaderText {
+    padding-top: 15px;
+    font-size: 20px;
+}
+
+.filtersHeaderTextBrand {
+    font-size: 16px;
+    line-height: 24px;
+    font-family: Cairo-Regular;
+    font-weight: 500;
+    color: #000068;
+
+}
+
+.midSection {
+    /* background-color: white; */
+    margin-bottom: 30px;
+    padding: 0px;
+}
+
+@font-face {
+    src: url("../../fonts/Roboto-Regular.ttf");
+    font-family: Roboto-Regular;
+}
+
+/* Style of the filter box start */
+
+.filterBox {
+    border: 1px solid #DDDD;
+    border-radius: 10px;
+}
+
+.brandsScroll {
+    padding-right: 10px;
+    height: 350px;
+    overflow: scroll;
+}
+/* Style of the filter box end */
+
+    /* style the scrollbar of the filter box  start*/
+    
+    .brandsScroll::-webkit-scrollbar {
+        width: 10px;
+    }
+
+    .brandsScroll::-webkit-scrollbar-thumb {
+        background: #000068;
+        border-radius: 10px;
+    }
+
+    
+    /* style the scrollbar of the filter box end*/
+
+#filterBtn {
+    float: right;
+    font-weight: 600;
+    background-color: #000068;
+    transition: 0.3s;
+}
+
+#filterBtn:hover {
+    background-color: #000068;
+}
+
+#cancelCheckBtn {
+    color: #28442e;
+    text-decoration: underline;
+    float: left;
+    cursor: pointer;
+}
+
+#filterBtn, #cancelCheckBtn {
+    margin: 15px 10px 10px 0px;
+    font-size: 15px;
+    padding: 8px 12px 8px 12px;
+}
+
+.checkmark {
+    height: 15px;
+    width: 15px;
+    background-color: #eee;
+}
+
+label {
+    cursor: pointer;
+}
+
+.brandLabelText {
+    padding-left: 5px;
+    font-size: 14px;
+}
+
+.brandCheckRow {
+    margin-bottom: 3px;
+}
+
+.productBox {
+    border: 1px solid #DDDD;
+    border-radius: 10px;
+}
+
+/* Adjust the spacing between prodcut cards */
+@media (min-width: 1200px) {
+    .col-lg-4 {
+        width: 31% !important;
+        margin-left: 1%;
+        margin-right: 1%;
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1200px) {
+    .col-md-6 {
+        width: 48% !important;
+        margin-left: 1%;
+        margin-right: 1%;
+    }
+}
+
+
+.myImageClass {
+    height: 100px;
+    /* width: 100px; */
+}

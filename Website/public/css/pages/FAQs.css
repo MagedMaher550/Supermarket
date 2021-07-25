@@ -1,0 +1,23 @@
+.thisContainer{
+  width: 75% !important ;
+}
+
+.FAQsDivQuestion{
+  cursor: pointer;
+  background-color: #000068;
+  padding: 10px;
+  color: white;
+  font-weight: bold;
+  margin: 10px;
+  font-size: 18px;
+  border-radius: 2px;
+}
+
+.FAQsDivAnswer{
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-weight: bold;
+  margin: 5px;
+  margin-left: 15px;
+  font-size: 16px;
+}

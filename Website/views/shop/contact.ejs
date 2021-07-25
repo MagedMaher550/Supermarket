@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+  <!-- jQuery library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+  <!-- Latest compiled JavaScript for bootstrap 3-->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+  <!-- File specicifed styling start-->
+  <link rel="stylesheet" href="../css/pages/contact.css">
+  <!-- File specicifed styling end-->
+
+  <!-- Componenets Styling start -->
+  <link rel="stylesheet" href="../css/components/sitemap.css">
+  <link rel="stylesheet" href="../css/components/navbar.css">
+  <link rel="stylesheet" href="../css/components/adminNavbar.css">
+  <link rel="stylesheet" href="../css/components/header.css">
+  <!-- Componenets Styling end -->
+
+  <!-- General Styling start-->
+  <link rel="stylesheet" href="../css/general/main.css">
+  <link rel="stylesheet" href="../css/general/myFramework.css">
+  <!-- General Styling end-->
+
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css">  <!-- Font Awesome 5 -->
+  
+  <!-- Latest compiled and minified CSS for bootstrap 3-->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+  <!-- side nav js -->
+  <script src="../../js/sideNav.js"></script>
+  <title> Cart </title>
+  <!-- Logo of website -->
+  <link rel='icon' href='../images/logo.svg' />
+
+  <title>Contact Us</title>
+
+</head>
+
+<body>
+
+<!-- Header Start -->
+
+<%- include('../include/header'); %>
+
+<!-- Header End -->
+
+  <!--Users Navbar Start-->
+  <%- include('../include/navbar'); %>
+  <!-- Navbar End-->
+
+  <!--Admin Navbar Start-->
+  <%- include('../include/adminNavbar'); %>
+  <!--Admin Navbar End-->
+
+
+  <!-- Path start -->
+
+  <div class="container whiteBlock path"> 
+    <a class="displayInlineBlock pathLink" href="http://localhost:3050/shop/home"> Home </a>
+    <span class="displayInlineBlock">
+      <i class="fas fa-angle-right"></i>
+    </span>
+    <a class="displayInlineBlock pathLink"> Contact Us </a>
+  </div>
+
+  <!-- Path end -->
+  
+  <!-- Our Location Start -->
+
+  <div class="container">
+    <div class="col-xs-12">      
+        <p class="locationHeader">
+          Our Information
+        </p>
+    </div>
+  </div>
+
+  <div class="container whiteBlock infoBox">
+        <div class="row">
+          <div class="col-xs-2 infoText"> Address1: </div>
+          <div class="col-xs-10 infoText"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea, asperiores. Aut dicta, perferendis nulla minus aspernatur praesentium </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-2 infoText"> Address2: </div>
+          <div class="col-xs-10 infoText"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea, asperiores. Aut dicta, perferendis nulla minus aspernatur praesentium </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-2 infoText"> Phone Number 1: </div>
+          <div class="col-xs-10 infoText"> +20 126 758 295 2 </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-2 infoText"> Phone Number 2: </div>
+          <div class="col-xs-10 infoText"> +20 631 718 361 0 </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-2 infoText"> Email: </div>
+          <div class="col-xs-10 infoText"> store@gmail.com </div>
+        </div>
+  </div>
+
+  <!-- Our Location End -->
+
+  <!-- Contact Us Start -->
+
+  <div class="container">
+    <div class="col-xs-12">      
+        <p class="locationHeader">
+          Contact Us
+        </p>
+    </div>
+  </div>
+
+  <div class="container whiteBlock contact">
+    <form action="http://localhost:3050/admin/enquiry" method="POST">
+      <div class="form-group">
+        <label for="Name"> *Your Name</label>
+        <input type="text" class="form-control" id="Name" name="userName">
+      </div>
+      <div class="form-group">
+        <label for="Email"> *Your Email </label>
+        <input type="Email" class="form-control" name="userEmail">
+      </div>
+      <div class="form-group">
+        <label for="Enquiry"> *Enquiry </label>
+        <textarea class="form-control" id="Enquiry" rows="3" name="userEnquiry"></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+
+    </form>
+  </div>
+
+  <!-- Contact Us End -->
+
+      <!-- Footer Start -->
+        
+      <%- include('../include/footer'); %>
+      
+      <!-- Footer End -->
+</body>
+
+</html>

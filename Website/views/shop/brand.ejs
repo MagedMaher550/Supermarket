@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+  <!-- jQuery library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+  <!-- Latest compiled JavaScript for bootstrap 3-->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+  <!-- File specicifed styling start-->
+  <link rel="stylesheet" href="../css/pages/brand.css">
+  <!-- File specicifed styling end-->
+
+  <!-- Componenets Styling start -->
+  <link rel="stylesheet" href="../css/components/sitemap.css">
+  <link rel="stylesheet" href="../css/components/navbar.css">
+  <link rel="stylesheet" href="../css/components/adminNavbar.css">
+  <link rel="stylesheet" href="../css/components/header.css">
+  <!-- Componenets Styling end -->
+
+  <!-- General Styling start-->
+  <link rel="stylesheet" href="../css/general/main.css">
+  <link rel="stylesheet" href="../css/general/myFramework.css">
+  <!-- General Styling end-->
+
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css">  <!-- Font Awesome 5 -->
+  
+  <!-- Latest compiled and minified CSS for bootstrap 3-->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+  <!-- side nav js -->
+  <script src="../../js/sideNav.js"></script>
+  <title>Brand</title>
+
+</head>
+
+<body>
+
+  <!--First Headear Start-->
+  <%- include('../include/header'); %>
+  <!--End First Headear-->
+
+  <!--Users Navbar Start-->
+  <%- include('../include/navbar'); %>
+  <!-- Navbar End-->
+
+  <!--Admin Navbar Start-->
+  <%- include('../include/adminNavbar'); %>
+  <!--Admin Navbar End-->
+
+ <!-- Path start -->
+
+ <div class="container whiteBlock path">
+  <a class="displayInlineBlock pathLink"> Home </a>
+  <span class="displayInlineBlock">
+    <i class="fas fa-angle-right"></i>
+  </span>
+  <a class="displayInlineBlock pathLink"> Brand </a>
+</div>
+
+<!-- Path end -->
+
+<div class="container midSection">
+  <!-- Side Section Start -->
+  <div class="col-xs-12 col-md-3">
+    <div class="sideBox">
+      <a href="#"> Login </a>
+      <a href="#"> Register </a>
+      <a href="#"> Forgotten Password </a>
+      <a href="#"> My Account </a>
+      <a href="#"> My Address Book </a>
+      <a href="#"> Wish List </a>
+      <a href="#"> Order History </a>
+      <a href="#"> Downloads </a>
+      <a href="#"> Recurring Payments </a>
+      <a href="#"> Reward Points </a>
+      <a href="#"> Returns </a>
+      <a href="#"> Transactions </a>
+      <a href="#"> Newsletter </a>
+    </div>
+  </div>
+  <!-- Side Section End -->
+  <!-- Brands Section Strat -->
+
+    <div class="col-xs-12 col-md-9">
+      <div class="row leftSectionElement">
+        <div id="greenSqaure"></div>
+        <h3 id="brandsHeaderText"> Find Your Favourite Brand</h3>
+      </div>
+
+      <div class="row leftSectionElement">
+        <strong> Brand Index: </strong> A &nbsp C &nbsp H &nbsp P &nbsp S
+      </div>
+
+      <div class="row leftSectionElement">
+        <div class="brandBox">
+          <div class="letterBox">
+            A
+          </div>
+           <p class="brandName">
+            Apple
+           </p> 
+        </div>
+      </div>
+
+      <div class="row leftSectionElement">
+        <div class="brandBox">
+          <div class="letterBox">
+            C
+          </div>
+           <p class="brandName">
+            Canon
+           </p> 
+        </div>
+      </div>
+
+      <div class="row leftSectionElement">
+        <div class="brandBox">
+          <div class="letterBox">
+            H
+          </div>
+           <p class="brandName">
+            Hewlett-Packard
+           </p> 
+           <p class="brandName">
+            HTC
+           </p> 
+        </div>
+      </div>
+
+      <div class="row leftSectionElement">
+        <div class="brandBox">
+          <div class="letterBox">
+            P
+          </div>
+           <p class="brandName">
+            Palm
+           </p> 
+        </div>
+      </div>
+
+      <div class="row leftSectionElement">
+        <div class="brandBox">
+          <div class="letterBox">
+            S
+          </div>
+           <p class="brandName">
+            Sony
+           </p> 
+        </div>
+      </div>
+      
+    </div>
+  
+  <!-- Brands Section End -->
+</div>
+  
+
+
+  <!-- Footer Start -->
+        
+  <%- include('../include/footer'); %>
+      
+  <!-- Footer End -->
+</body>
+
+</html>

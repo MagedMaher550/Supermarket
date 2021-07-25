@@ -1,0 +1,99 @@
+.pushDown {
+    padding-bottom: 50px;
+  }
+  
+  .pushUp {
+    padding-top: 50px;
+  }
+  
+  .alignLeft {
+    text-align: left !important;
+  }
+  
+  .goUp {
+    padding-top: 20px;
+  }
+
+  .goDown {
+    padding-top: 20px;
+  }
+
+  .toRight {
+    padding-left: 20px !important;
+  }
+  
+  .goLeftApp {
+    padding-left: 5px;
+  }
+  
+  .displayInlineBlock {
+    display: inline-block !important;
+  }
+  
+  .lineThrough {
+    text-decoration: line-through;
+  }
+  
+  .center {
+    text-align: center !important;
+  }
+  
+  .toWhite {
+    color: white;
+  }
+  
+  .toLightGrey {
+    color: #999;
+  }
+  
+  .toBlack {
+    color: black !important;
+  }
+  
+  .toRed {
+    color: #cd0c2b
+  }
+  
+  .positionRelative {
+    position: relative;
+  }
+  
+  .positionCenter {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  
+  .cutText {
+    width: 200px;
+    overflow: hidden;
+    display: inline-block;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  
+  .displayBlock {
+    display: block;
+  }
+  
+  .fillWidth {
+    width: 100%;
+  }
+
+  .floatLeft {
+    float: left !important;
+  }
+
+  .floatRight {
+    float: right !important;
+  }
+  
+.zeroPadding {
+  padding: 0px !important;
+}
+
+.verticalCenter {
+  vertical-align: middle !important;
+}
